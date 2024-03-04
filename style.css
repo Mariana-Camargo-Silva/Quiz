@@ -1,0 +1,93 @@
+@charset "utf-8";
+@font-face {
+    font-family: font1;
+    src: url(font/Butler_Black.otf);
+}
+ @font-face {
+    font-family: font2;
+    src: url(font/Lemands.otf);
+ }
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-image: url(https://rondoniaovivo.com/imagensNoticias/Cinema-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+     
+
+}
+.quiz-container{
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 150px;
+    align-items: center;
+}
+
+#pergunta{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: aliceblue;
+    text-shadow: 4px 5px 4px black;
+    background: #00000070;
+    max-width: 300px;
+    position: relative;
+    left: 150PX;
+    font-size: 30px;
+    font-family: font2;
+}
+
+#opcoes{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 30px;
+    font-family: font2;
+}
+
+button{
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border: black 5px solid;
+}
+
+.correto{
+    background-color: black;
+    color: aliceblue;
+    text-shadow: 4px 5px 4px black;
+    font-size: 25px;
+    font-family: font2;
+}
+
+.incorreta{
+   color: black;
+   background-color: aliceblue;
+   font-size: 25px;
+   font-family: font2;
+
+    
+}
+
+h1{
+    color: white;
+    text-shadow: 4px 5px 4px black;
+    font-style: italic;
+    font-size: 50px;
+  margin-top: -100px;
+  font-family: font1;
+
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 640px;
+    color: black;
+    background-color: white;
+    font-family: font2;
+}
+
+
+

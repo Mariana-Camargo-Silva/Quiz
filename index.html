@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" type="imagex/png" href="https://cdn-icons-png.flaticon.com/512/3658/3658993.png">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Quiz de Filmes</h1>
+        <div id="pergunta"></div>
+        <div id="opcoes"></div>
+        <div id="resultado"></div>
+    </div>
+          
+     <script>
+        const perguntas = [
+            {
+                pergunta: "Qual é o nome dos filhos de Jake Sally no filme 'Avatar' ?",
+                opcoes: ["Neteyam, Kiri, Loak, Tuktirey", "Aonung, Rotxo, Tsireya"],
+                resposta: "Neteyam, Kiri, Loak, Tuktirey"
+            },
+            {
+                pergunta: "Quantos filmes 'Velozes e Furiosos' tem atualmente?",
+                opcoes:["6","8","11","10"],
+                resposta: "10"
+            },
+            {
+                pergunta: "Os filmes 'IT: A Coisa' são baseados no livro de qual autor?",
+                opcoes: ["Stephen King" , "Jack D.Grazer" , " J.R.R. Tolkien"],
+                resposta: "Stephen King"
+            },
+            {
+                pergunta: "No filme 'Pânico' quem foi os primeiros assasinos?",
+                opcoes: ["Richie e Amber", "Jill e Charlie" , "Billy e Stu"],
+                resposta: "Billy e Stu"
+            },
+             {
+                pergunta: "Em que ano lançou 'Harry Potter'?",
+                opcoes: ["2001", "2004" , "2008"],
+                resposta: "2001"
+             },  
+             {
+                pergunta: "Quem derrotou 'O Thanos'?",
+                opcoes: ["Homem de Ferro", "Capitã Marvel" , "Thor"],
+                resposta: "Homem de Ferro"
+             },
+        ];
+
+
+         const perguntaElemento = document.getElementById("pergunta");
+         const opcoesElemento = document.getElementById("opcoes");
+         const resultadoElemento = document.getElementById("resultado");
+
+         let indicePerguntaAtual = 0;
+         
+         function carregarPergunta() {
+            const perguntaAtual = perguntas[indicePerguntaAtual];
+            perguntaElemento.textContent = perguntaAtual.pergunta;
+         
+
+         opcoesElemento.innerHTML = "";
+         perguntaAtual.opcoes.forEach(opcao => {
+            const botao = document.createElement("button");
+            botao.textContent = opcao;
+            botao.addEventListener("click", () => verificarResposta(opcao));
+            opcoesElemento.appendChild(botao); 
+         });
+        }
+
+         function verificarResposta(respostaSelecionada) {
+            const perguntaAtual = perguntas [indicePerguntaAtual];
+            if (respostaSelecionada === perguntaAtual.resposta) {
+                resultadoElemento.textContent = "Resposta correta!";
+                resultadoElemento.className = "correto";
+            } else{
+                resultadoElemento.textContent = "Resposta incorreta. A resposta correta é :" + perguntaAtual.resposta;
+                resultadoElemento.className = "incorreta";
+            }
+            indicePerguntaAtual ++;
+            if (indicePerguntaAtual < perguntas.length){
+                setTimeout(carregarPergunta, 2000);
+            } else {
+                resultadoElemento.textContent = "Quiz concluido, parabens!";
+                resultadoElemento.className = "";
+            }
+
+            
+         }
+        
+          carregarPergunta();
+    
+        
+     </script>
+     <br>
+
+<img src="https://gifs.eco.br/wp-content/uploads/2022/08/gifs-de-cinemas-3.gif" alt="">
+     
+
+<footer> Feito Por Mariana &#174</footer>
+    
+</body>
+</html>
